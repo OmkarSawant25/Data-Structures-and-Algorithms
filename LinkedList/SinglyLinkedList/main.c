@@ -3,14 +3,12 @@
 
 int main()
 {
-	
-	int option, data, key;
+	int option, data;
 
 	Slist *head = NULL; //initialize the header to NULL
 	printf("1. Insert last\n2. Insert After\n3. Print list\n4. Exit\n");
 	while (1)
 	{
-		/*ask user options*/
 		printf("Enter your choice : ");
 		scanf("%d", &option);
 		
@@ -38,7 +36,7 @@ int main()
                 {
 					printf("INFO : Insertion Failure\n");
                 }
-			
+				break;
 			case 3:
 				/* print list function call*/
 				print_list(head);
