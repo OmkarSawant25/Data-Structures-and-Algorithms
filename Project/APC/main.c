@@ -44,6 +44,10 @@ int main(int argc, char *argv[])
 	case '-':
 	{
 		/* call the function to perform the subtraction operation */
+
+		remove_leading_zero(&head1);
+		remove_leading_zero(&head2);
+		
 		if (comparelist(head1, head2) == FAILURE)
 		{
 			if (subtraction(&head2, &tail2, &head1, &tail1, &headR, &tailR) == FAILURE)

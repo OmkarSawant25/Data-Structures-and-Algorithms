@@ -142,3 +142,14 @@ Status comparelist(Dlist *head1, Dlist *head2)
 
     return SUCCESS; // if both are equal
 }
+
+void remove_leading_zero(Dlist **head)
+{
+    while ((*head)->data == 0 && (*head)->next != NULL)
+    {
+        Dlist *temp = *head;
+        *head = (*head)->next;
+        (*head)->prev = NULL;
+        free(temp);
+    }
+}
