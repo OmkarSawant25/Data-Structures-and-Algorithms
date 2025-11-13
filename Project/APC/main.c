@@ -22,47 +22,62 @@ int main(int argc, char *argv[])
 
 	char option;
 
-	do
+	if (string_to_list(&head1, &tail1, argv[1]) == FAILURE || string_to_list(&head2, &tail2, argv[3]) == FAILURE)
 	{
-		if (string_to_list(&head1, &tail1, argv[1]) == FAILURE || string_to_list(&head2, &tail2, argv[3]) == FAILURE)
+		printf("Error : Conversion to list failed!\n");
+		return FAILURE;
+	}
+	char operator = argv[2][0];
+
+	switch (operator)
+	{
+	case '+':
+	{
+		/* call the function to perform the addition operation */
+		if (addition(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
 		{
-			printf("Error : Conversion to list failed!\n");
+			printf("Error : Addition Operation Failed\n");
 			return FAILURE;
 		}
-		print_list(head1);
-		print_list(head2);
-		char operator = argv[2][0];
-
-		switch (operator)
+		break;
+	}
+	case '-':
+	{
+		/* call the function to perform the subtraction operation */
+		if (comparelist(head1, head2) == FAILURE)
 		{
-		case '+':
-		{
-			/* call the function to perform the addition operation */
-			if(addition(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
+			if (subtraction(&head2, &tail2, &head1, &tail1, &headR, &tailR) == FAILURE)
 			{
-				printf("Error : Addition Operation Failed\n");
+				printf("Error : Subtraction Operation Failed\n");
 				return FAILURE;
 			}
-			break;
+			headR->data = -(headR->data);
 		}
-		case '-':
-			/* call the function to perform the subtraction operation */
-			break;
-		case '*':
-			/* call the function to perform the multiplication operation */
-			break;
-		case '/':
-			/* call the function to perform the division operation */
-			break;
-		default:
-			printf("Invalid Input:-( Try again...\n");
+		else
+		{
+			if (subtraction(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
+			{
+				printf("Error : Subtraction Operation Failed\n");
+				return FAILURE;
+			}
 		}
 
-		printf("Result is :\n");
-		print_list(headR);
-		printf("Want to continue? Press [yY | nN]: ");
-		scanf("\n%c", &option);
-	} while (option == 'y' || option == 'Y');
+		break;
+	}
+
+	case '*':
+		/* call the function to perform the multiplication operation */
+		break;
+	case '/':
+		/* call the function to perform the division operation */
+		break;
+	default:
+		printf("Invalid Input:-( Try again...\n");
+	}
+
+	print_list("Number 1: ", head1);
+	print_list("Number 2: ", head2);
+	print_list("Result  : ", headR);
 
 	return 0;
 }

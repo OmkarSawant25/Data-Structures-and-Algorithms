@@ -87,19 +87,58 @@ Status string_to_list(Dlist **head, Dlist **tail, char *num)
     return SUCCESS;
 }
 
-void print_list(Dlist *head)
+void print_list(const char *msg, Dlist *head)
 {
-	if (head == NULL)
-	{
-		printf("INFO : List is empty\n");
-	}
-	else
-	{
-	    while (head)		
-	    {
-		    printf("%d", head -> data);
-		    head = head -> next;
-	    }
+    printf("%s", msg);
+    if (head == NULL)
+    {
+        printf("List is empty\n");
+        return;
+    }
+    while (head)
+    {
+        printf("%d", head->data);
+        head = head->next;
     }
     printf("\n");
+}
+
+
+int length(Dlist *head)
+{
+    int len = 0;
+    while(head)
+    {
+        len++;
+        head = head->next;
+    }
+    return len;
+}
+
+Status comparelist(Dlist *head1, Dlist *head2)
+{
+    int x = length(head1);
+    int y = length(head2);
+
+    if (x > y)
+        return SUCCESS;   
+    if (x < y)
+        return FAILURE;   
+
+    Dlist *temp1 = head1;
+    Dlist *temp2 = head2;
+
+    while (temp1 && temp2)
+    {
+        if (temp1->data > temp2->data)
+            return SUCCESS;  
+
+        if (temp1->data < temp2->data)
+            return FAILURE;  
+
+        temp1 = temp1->next;
+        temp2 = temp2->next;
+    }
+
+    return SUCCESS; // if both are equal
 }
