@@ -18,6 +18,6 @@ int create_stack(Stack_t *, int );
 int Push(Stack_t *, int);
 int Pop(Stack_t *);
 int Peek(Stack_t *);
-void Peep(Stack_t);
+int Peep(Stack_t);
 
 #endif

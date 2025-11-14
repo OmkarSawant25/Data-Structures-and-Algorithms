@@ -14,7 +14,7 @@ int Peep(Stack_t s)
 	    printf("Top -> ");
 	    while (s.top > -1)
 	    {
-		    printf("%d ", s -> stack[(s.top)--]);
+		    printf("%d ", s.stack[(s.top)--]);
 	    }
 	    printf("\n");
     }

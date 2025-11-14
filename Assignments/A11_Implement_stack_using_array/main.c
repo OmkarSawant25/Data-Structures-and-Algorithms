@@ -1,8 +1,22 @@
+/*
+Name        : Omkar Ashok Sawant
+Date        : 11/11/2025
+Program     : Implement stack using array
+Description : Implement the stack using array:
+              1.push(stack, data)
+              2.pop(stack)
+              3.peek(stack, data)
+              4.peep(stack)
+*/
+
+
 #include "stack.h"
 
 int create_stack(Stack_t *stk, int size)
 {
-
+    stk->capacity = size;
+    stk->top = -1;
+    stk->stack = (int *)malloc(sizeof(int)*size);
 }
 
 

@@ -41,15 +41,6 @@ Status subtraction(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, D
         if (temp2) temp2 = temp2->prev;
     }
 
-    // Remove leading zeros
-    // while ((*headR)->data == 0 && (*headR)->next != NULL)
-    // {
-    //     Dlist *temp = *headR;
-    //     *headR = (*headR)->next;
-    //     (*headR)->prev = NULL;
-    //     free(temp);
-    // }
-    
     remove_leading_zero(headR);
     return SUCCESS;
 }
