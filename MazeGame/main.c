@@ -59,7 +59,10 @@ void do_operation(int *row, int *col, char arr[4][4], maze *m, char *a)
     }
 
     if (arr[*row][*col] == '0')
+    {
         printf("Use Backward as the this path is Blocked\n");
+        flag = 1;
+    }
 }
 
 void push(int *row, int *col)
@@ -110,6 +113,6 @@ int main()
 
     } while (arr[row][col] != 'E');
 
-    printf("🎉 Congratulations 🍾👏\n📍 You reached your destination\n");
+    printf("🎉 Congratulations 👏\n📍 You reached your destination\n");
     return 0;
 }

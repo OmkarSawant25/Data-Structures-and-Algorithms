@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
 		remove_leading_zero(&head1);
 		remove_leading_zero(&head2);
-		
+
 		if (comparelist(head1, head2) == FAILURE)
 		{
 			if (subtraction(&head2, &tail2, &head1, &tail1, &headR, &tailR) == FAILURE)
@@ -69,11 +69,19 @@ int main(int argc, char *argv[])
 		break;
 	}
 
-	case '*':
+	case 'X':
+		multiplication(&head1, &tail1, &head2, &tail2, &headR, &tailR);
 		/* call the function to perform the multiplication operation */
 		break;
 	case '/':
 		/* call the function to perform the division operation */
+
+		if(division(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
+		{
+			printf("Not Divisible by 0\n");
+			return FAILURE;
+		}
+
 		break;
 	default:
 		printf("Invalid Input:-( Try again...\n");

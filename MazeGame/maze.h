@@ -11,7 +11,7 @@ typedef struct node
 
 maze stack[100];
 int top = -1;
-
+int flag = 0;
 void pop();
 void push(int *row, int *col);
 void do_operation(int *row, int *col, char arr[][*col], maze *m, char *a);
