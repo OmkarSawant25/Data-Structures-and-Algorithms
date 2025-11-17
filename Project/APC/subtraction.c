@@ -43,7 +43,7 @@ Status subtraction(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, D
         if (temp2) temp2 = temp2->prev;
     }
 
-    remove_leading_zero(headR);                // remove unnecessary leading zeros
+    remove_leading_zero(headR,tailR);                // remove unnecessary leading zeros
 
     return SUCCESS;
 }

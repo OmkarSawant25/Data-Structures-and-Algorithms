@@ -154,16 +154,34 @@ Status comparelist(Dlist *head1, Dlist *head2)
 }
 
 /* Remove unnecessary leading zeros */
-void remove_leading_zero(Dlist **head)
+// void remove_leading_zero(Dlist **head)
+// {
+//     while ((*head)->data == 0 && (*head)->next != NULL)
+//     {
+//         Dlist *temp = *head;
+//         *head = (*head)->next;
+//         (*head)->prev = NULL;
+//         free(temp);
+//     }
+// }
+
+void remove_leading_zero(Dlist **head, Dlist **tail)
 {
-    while ((*head)->data == 0 && (*head)->next != NULL)
+    while (*head && (*head)->data == 0 && *head != *tail)
     {
         Dlist *temp = *head;
         *head = (*head)->next;
         (*head)->prev = NULL;
         free(temp);
     }
+
+    Dlist *t = *head;
+    while (t && t->next)
+        t = t->next;
+
+    *tail = t;
 }
+
 
 /* Free entire DLL */
 void free_list(Dlist **head, Dlist **tail)
@@ -199,5 +217,15 @@ void insert_at_last(Dlist **head, Dlist **tail, int data)
         new->prev = *tail;
         (*tail)->next = new;
         *tail = new;
+    }
+}
+
+void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1)
+{
+    Dlist *temp = *tail1;
+    while(temp)
+    {
+        insert_at_start(newH,newT,temp->data);
+        temp = temp->prev;
     }
 }

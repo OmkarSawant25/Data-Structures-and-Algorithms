@@ -45,8 +45,8 @@ int main(int argc, char *argv[])
 	{
 		/* call the function to perform the subtraction operation */
 
-		remove_leading_zero(&head1);
-		remove_leading_zero(&head2);
+		remove_leading_zero(&head1, &tail1);
+		remove_leading_zero(&head2, &tail2);
 
 		if (comparelist(head1, head2) == FAILURE)
 		{

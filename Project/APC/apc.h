@@ -42,12 +42,14 @@ Status multiplication(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2
 Status division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR);
 
 /* Various Operations */
-void remove_leading_zero(Dlist **head);
+// void remove_leading_zero(Dlist **head);
+void remove_leading_zero(Dlist **head, Dlist **tail);
 Status comparelist(Dlist *head1, Dlist *head2);
 int length(Dlist *head);
 
 void free_list(Dlist **head, Dlist **tail);
 void insert_at_last(Dlist **head, Dlist **tail, int data);
 int divisor(Dlist **head, Dlist **tail);
+void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1);
 
 #endif
