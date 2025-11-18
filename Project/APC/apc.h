@@ -49,7 +49,7 @@ int length(Dlist *head);
 
 void free_list(Dlist **head, Dlist **tail);
 void insert_at_last(Dlist **head, Dlist **tail, int data);
-int divisor(Dlist **head, Dlist **tail);
-void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1);
+int division_by_zero(Dlist **head, Dlist **tail);
+// void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1);
 
 #endif

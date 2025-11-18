@@ -5,6 +5,8 @@ Status valid_number(char *nums)
 {
     for (int i = 0; nums[i] != '\0'; i++)
     {
+        if(nums[i] == '+' || nums[i] == '-')
+            continue;
         if (nums[i] < '0' || nums[i] > '9')
             return FAILURE;
     }
@@ -229,3 +231,13 @@ void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1)
         temp = temp->prev;
     }
 }
+
+/* check if divisor is zero */
+int division_by_zero(Dlist **head, Dlist **tail)
+{
+	if (*head == *tail && (*head)->data == 0)
+		return 1;
+	else
+		return 0;
+}
+

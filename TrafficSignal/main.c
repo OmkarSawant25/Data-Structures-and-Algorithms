@@ -10,16 +10,24 @@ int main()
     int choice, car_num;
 
     printf("======================== 🚦 Traffic Signal Simulation 🚦 ========================\n\n");
-    
+
     while (1)
     {
         printf("1. Change signal\n");
         printf("2. Add car\n");
         printf("3. Pass car\n");
-        printf("4. Show waiting cars\n");
+        printf("4. Show waiting cars\n\n");
+        // printf("Enter your choice: ");
+        // scanf("%d", &choice);
+        // printf("Current signal: %c\n\n", signal);
+        if (signal == 'R')
+            printf("Current signal : RED 🔴\n\n");
+        else if (signal == 'Y')
+            printf("Current signal : YELLOW 🟡\n\n");
+        else
+            printf("Current signal : GREEN 🟢\n\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        printf("Current signal: %c\n\n", signal);
 
         switch (choice)
         {
@@ -118,8 +126,7 @@ void show_queue(Queue *front, Queue *rear)
     {
         printf("%d. %d\n", count++, temp->data);
         temp = temp->next;
-    } 
-    while (temp != front);
+    } while (temp != front);
 
     printf("\n");
 }
