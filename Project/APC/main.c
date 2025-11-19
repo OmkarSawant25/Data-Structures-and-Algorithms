@@ -71,7 +71,6 @@ int main(int argc, char *argv[])
 
 	case 'X':
 		multiplication(&head1, &tail1, &head2, &tail2, &headR, &tailR);
-		/* call the function to perform the multiplication operation */
 		break;
 	case '/':
 		/* call the function to perform the division operation */
