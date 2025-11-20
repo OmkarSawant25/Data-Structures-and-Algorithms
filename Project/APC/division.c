@@ -42,6 +42,7 @@ Status division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlis
 
 			subtraction(&remH, &remT, head2, tail2, &resH, &resT); // rem = rem - divisor
 			remove_leading_zero(&resH, &resT);
+			free_list(&remH, &remH);
 
 			remH = resH; // update remainder with the results
 			remT = resT; // update remainder with the results

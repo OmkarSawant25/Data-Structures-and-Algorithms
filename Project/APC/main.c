@@ -75,12 +75,15 @@ int main(int argc, char *argv[])
 	case '/':
 		/* call the function to perform the division operation */
 
-		if(division(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
+		if (division(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
 		{
 			printf("Not Divisible by 0\n");
 			return FAILURE;
 		}
+		break;
 
+	case '%':
+		modules(&head1, &tail1, &head2, &tail2, &headR, &tailR);
 		break;
 	default:
 		printf("Invalid Input:-( Try again...\n");

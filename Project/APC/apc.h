@@ -50,6 +50,8 @@ int length(Dlist *head);
 void free_list(Dlist **head, Dlist **tail);
 void insert_at_last(Dlist **head, Dlist **tail, int data);
 int division_by_zero(Dlist **head, Dlist **tail);
-// void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1);
+void copy_list(Dlist **srcH, Dlist **srcT, Dlist **destH, Dlist **destT);
+
+Status modules(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR);
 
 #endif

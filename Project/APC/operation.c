@@ -18,7 +18,7 @@ Status valid_operator(char *op)
 {
     if (strcmp(op, "+") == 0 || strcmp(op, "-") == 0 ||
         strcmp(op, "X") == 0 || strcmp(op, "x") == 0 ||
-        strcmp(op, "/") == 0)
+        strcmp(op, "/") == 0 || strcmp(op, "%") == 0)
     {
         return SUCCESS;
     }
@@ -222,15 +222,17 @@ void insert_at_last(Dlist **head, Dlist **tail, int data)
     }
 }
 
-void copy_list(Dlist **newH, Dlist **newT, Dlist **tail1)
+void copy_list(Dlist **srcH, Dlist **srcT, Dlist **destH, Dlist **destT)
 {
-    Dlist *temp = *tail1;
-    while(temp)
+    Dlist *temp = *srcH;
+
+    while (temp)
     {
-        insert_at_start(newH,newT,temp->data);
-        temp = temp->prev;
+        insert_at_last(destH, destT, temp->data);
+        temp = temp->next;
     }
 }
+
 
 /* check if divisor is zero */
 int division_by_zero(Dlist **head, Dlist **tail)
