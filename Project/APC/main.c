@@ -225,7 +225,7 @@ int main(int argc, char *argv[])
 	printf(" Number 2 : %s", (sign2 == -1 ? "-" : ""));
 	print_list(head2);
 
-	printf("------------------------------------------------------\n");
+	printf("--------------------------------------------------------------\n");
 
 	/* Print final result */
 	printf(" Result   : ");
