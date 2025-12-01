@@ -5,7 +5,7 @@
  **********************************************************************************************/
 #include "apc.h"
 
-Status modules(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR)
+Status modulus(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlist **headR, Dlist **tailR)
 {
     /* Check if divisor is zero */
     if (division_by_zero(head2, tail2))

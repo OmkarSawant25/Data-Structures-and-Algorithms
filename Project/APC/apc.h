@@ -79,7 +79,7 @@ Status division(Dlist **head1, Dlist **tail1,
                 Dlist **headR, Dlist **tailR);
 
 /* Big number modulus (remainder only) */
-Status modules(Dlist **head1, Dlist **tail1,
+Status modulus(Dlist **head1, Dlist **tail1,
                Dlist **head2, Dlist **tail2,
                Dlist **headR, Dlist **tailR);
 

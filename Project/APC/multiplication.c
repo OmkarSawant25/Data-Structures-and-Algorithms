@@ -67,5 +67,7 @@ Status multiplication(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2
         temp2 = temp2->prev; // Move to previous digit in number2
     }
 
+	remove_leading_zero(headR, tailR);
+    
     return SUCCESS; // Multiplication done
 }

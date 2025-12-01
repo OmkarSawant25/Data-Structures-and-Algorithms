@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "apc.h": "c"
+        "apc.h": "c",
+        "inverted_search.h": "c"
     }
 }

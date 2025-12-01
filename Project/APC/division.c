@@ -12,6 +12,8 @@ Status division(Dlist **head1, Dlist **tail1, Dlist **head2, Dlist **tail2, Dlis
 	if (division_by_zero(head2, tail2))
 		return FAILURE; // Cannot divide by zero
 
+	remove_leading_zero(head2, tail2);
+	
 	/* If number1 < number2, answer is 0 */
 	if (comparelist(*head1, *head2) == FAILURE)
 	{

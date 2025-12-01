@@ -189,7 +189,9 @@ int main(int argc, char *argv[])
 		/* Check if second number is zero */
 		if (division(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
 		{
-			printf("Not Divisible by 0\n");
+			printf("\nERROR: Not Divisible by 0\n");
+			printf("\n==============================================================\n");
+
 			return FAILURE;
 		}
 
@@ -200,7 +202,7 @@ int main(int argc, char *argv[])
 	/* ----------------- MODULUS ----------------- */
 	case '%':
 		/* Find remainder of both numbers */
-		modules(&head1, &tail1, &head2, &tail2, &headR, &tailR);
+		modulus(&head1, &tail1, &head2, &tail2, &headR, &tailR);
 
 		/* Modulus keeps sign of first number */
 		result_sign = sign1;
@@ -231,7 +233,7 @@ int main(int argc, char *argv[])
 	printf(" Result   : ");
 	if (result_sign == -1) // Print minus sign if result is negative
 		printf("-");
-
+	
 	print_list(headR);
 
 	printf("==============================================================\n");
