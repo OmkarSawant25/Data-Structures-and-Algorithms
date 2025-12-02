@@ -4,8 +4,8 @@ Status initialise_hash(Hash_t *hash)
 {
     for (int i = 0; i < HASH_SIZE; i++)
     {
-        hash->index = i;
-        hash->m_link = NULL;
+        hash[i].index = i;
+        hash[i].m_link = NULL;
     }
     return SUCCESS;
 }
@@ -50,7 +50,7 @@ Sub_node *create_sub_node(char *filename)
     
     strcpy(newnode->file_name, filename);
     newnode->word_count = 1;
-    newnode->link = NULL;
+    newnode->s_link = NULL;
     
     return newnode;
 }

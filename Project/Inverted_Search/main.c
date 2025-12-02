@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     
     if(initialise_hash(hash_array) == SUCCESS)
     {
-        printf("Hash Table initialised successfully\n");
+        printf("Hash Table Initialised successfully!\n");
     }
 
     while(1)
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
                     printf("Database created successfully.\n");
                 }
                 break;
-            // case 2:
-            //     display_database();
-            //     break;
+            case 2:
+                display_database(hash_array);
+                break;
             // case 3:
             //     search_database();
             //     break;

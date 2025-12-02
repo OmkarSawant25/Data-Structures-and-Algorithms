@@ -57,4 +57,6 @@ void find_index(int *index, char *buffer);
 Main_node *create_main_node(char *word);
 Sub_node *create_sub_node(char *filename);
 
+void display_database(Hash_t *hash_array);
+
 #endif
