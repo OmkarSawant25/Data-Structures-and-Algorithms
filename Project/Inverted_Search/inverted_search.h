@@ -5,10 +5,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 #define FILE_SIZE 50
 #define HASH_SIZE 27
 #define WORD_SIZE 50
+
 
 typedef struct node
 {
@@ -51,6 +53,8 @@ long validate_file_size(FILE *fptr);
 Status validate_duplicate_file(char *argv, File_list **file);
 Status insert_at_last(File_list **head, char *argv);
 Status initialise_hash(Hash_t *hash);
+Status validate_backup_database(FILE *fptr);
+
 
 Status create_database(Hash_t *hash_array, File_list *head);
 void find_index(int *index, char *buffer);
@@ -58,5 +62,13 @@ Main_node *create_main_node(char *word);
 Sub_node *create_sub_node(char *filename);
 
 void display_database(Hash_t *hash_array);
+Status search_database(Hash_t *hash_arr, char *data);
+
+Status save_database(Hash_t *hash_array, char *file_name);
+Status update_database(Hash_t *hash_array, char *backup, File_list **head);
+void print_file_list(File_list **fileList);
+Status delete_duplicate_file(File_list **head, char *file_name);
+
+
 
 #endif
