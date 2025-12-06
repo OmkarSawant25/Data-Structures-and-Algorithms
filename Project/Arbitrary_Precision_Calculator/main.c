@@ -189,7 +189,7 @@ int main(int argc, char *argv[])
 		/* Check if second number is zero */
 		if (division(&head1, &tail1, &head2, &tail2, &headR, &tailR) == FAILURE)
 		{
-			printf("\nERROR: Not Divisible by 0\n");
+			printf("\nERROR: Not Divisible by 0. Operand 2 must be non zero value.\n");
 			printf("\n==============================================================\n");
 
 			return FAILURE;
