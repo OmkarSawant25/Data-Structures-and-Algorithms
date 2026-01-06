@@ -88,5 +88,6 @@ Status delete_duplicate_file(File_list **head, char *file_name);
 void find_index(int *index, char *buffer);
 Main_node *create_main_node(char *word);
 Sub_node *create_sub_node(char *filename);
+int delete_list(File_list **head);
 
 #endif

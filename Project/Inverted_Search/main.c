@@ -264,6 +264,7 @@ int main(int argc, char *argv[])
 
         /* -------- EXIT -------- */
         case 6:
+            delete_list(&head);
             printf("\n[EXIT] Program terminated.\n");
             return 0;
 
@@ -273,3 +274,4 @@ int main(int argc, char *argv[])
         }
     }
 }
+

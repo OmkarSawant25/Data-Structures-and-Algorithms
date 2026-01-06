@@ -136,3 +136,23 @@ void print_file_list(File_list **file_list)
     }
     printf("\n");
 }
+int delete_list(File_list **head)
+{
+    File_list *temp = *head; // Temporary pointer to traverse the list
+
+    if (*head == NULL) // If the list is empty
+    {
+        return FAILURE; // Return failure (nothing to delete)
+    }
+    else
+    {
+        while (temp != NULL) // Traverse the entire list
+        {
+            temp = temp->next; // Move temp to next node
+            free(*head);       // Free the current head node
+            *head = temp;      // Update head to the next node
+        }
+    }
+
+    return SUCCESS; // Return success after deleting all nodes
+}
